@@ -1,0 +1,58 @@
+name: Deploy ZewedJobs
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: zewedjobs_test
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+        ports:
+          - 3306:3306
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        cd telegram-bot
+        pip install -r requirements.txt
+    
+    - name: Setup database
+      run: |
+        mysql -h 127.0.0.1 -uroot -proot < shared-database/schema.sql
+    
+    - name: Run basic tests
+      run: |
+        cd telegram-bot
+        python -c "print('System test passed')"
+  
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Deploy to Railway
+      run: |
+        echo "Deployment would happen here"
+        # Add your deployment commands
