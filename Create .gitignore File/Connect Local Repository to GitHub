@@ -1,0 +1,13 @@
+# Add remote repository
+git remote add origin https://github.com/YOUR_USERNAME/zewedjobs-complete.git
+
+# Verify remote
+git remote -v
+# Should show:
+# origin  https://github.com/YOUR_USERNAME/zewedjobs-complete.git (fetch)
+# origin  https://github.com/YOUR_USERNAME/zewedjobs-complete.git (push)
+
+# Push to GitHub
+git push -u origin main
+# If main branch doesn't exist yet, use:
+git push -u origin master
