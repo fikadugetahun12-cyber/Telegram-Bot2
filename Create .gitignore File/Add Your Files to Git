@@ -1,0 +1,8 @@
+# Add all files except those in .gitignore
+git add .
+
+# Check what will be committed
+git status
+
+# Commit the files
+git commit -m "Initial commit: ZewedJobs Complete System"
