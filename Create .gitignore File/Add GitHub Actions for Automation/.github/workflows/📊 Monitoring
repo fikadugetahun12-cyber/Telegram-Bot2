@@ -1,0 +1,8 @@
+# Health check
+bash scripts/health-check.sh
+
+# Backup database
+bash scripts/backup-database.sh
+
+# View logs
+tail -f telegram-bot/bot.log
