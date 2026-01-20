@@ -1,0 +1,12 @@
+# Add to bot.py (at the end of main() function)
+if os.getenv('WEBHOOK_URL'):
+    # Webhook mode for production
+    app.run_webhook(
+        listen="0.0.0.0",
+        port=int(os.getenv('PORT', 8443)),
+        url_path=TOKEN,
+        webhook_url=f"{os.getenv('WEBHOOK_URL')}/{TOKEN}"
+    )
+else:
+    # Polling mode for development
+    app.run_polling()
