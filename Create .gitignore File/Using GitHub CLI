@@ -1,0 +1,14 @@
+# Install GitHub CLI first
+# For Ubuntu: sudo apt install gh
+# For Mac: brew install gh
+
+# Login to GitHub
+gh auth login
+
+# Create repository
+gh repo create zewedjobs-complete \
+  --description="Complete job portal system with Telegram bot and admin panel" \
+  --public \
+  --source=. \
+  --remote=origin \
+  --push
