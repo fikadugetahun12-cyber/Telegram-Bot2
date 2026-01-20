@@ -1,0 +1,21 @@
+# Remove any .env files from git
+git rm --cached telegram-bot/.env
+git rm --cached admin-panel/config/.env
+
+# Add them to .gitignore (already done in step 3)
+
+# Commit the change
+git commit -m "Remove sensitive .env files from tracking"
+
+# Create example files for GitHub
+cp telegram-bot/.env telegram-bot/.env.example
+cp admin-panel/config/.env admin-panel/config/.env.example
+
+# Remove actual secrets from example files
+sed -i 's/=.*$/=your_value_here/' telegram-bot/.env.example
+sed -i 's/=.*$/=your_value_here/' admin-panel/config/.env.example
+
+# Add example files
+git add telegram-bot/.env.example admin-panel/config/.env.example
+git commit -m "Add example environment files"
+git push
