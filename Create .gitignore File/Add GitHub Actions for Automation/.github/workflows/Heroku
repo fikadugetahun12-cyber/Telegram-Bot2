@@ -1,0 +1,18 @@
+# Install Heroku CLI
+curl https://cli-assets.heroku.com/install.sh | sh
+
+# Login to Heroku
+heroku login
+
+# Create Heroku app
+heroku create zewedjobs-bot
+
+# Add MySQL addon
+heroku addons:create cleardb:ignite
+
+# Set environment variables
+heroku config:set BOT_TOKEN=your_bot_token
+heroku config:set ADMIN_IDS=123456789
+
+# Deploy
+git push heroku main
