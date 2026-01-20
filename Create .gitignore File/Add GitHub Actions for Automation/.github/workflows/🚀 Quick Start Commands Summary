@@ -1,0 +1,20 @@
+# 1. Clone your repository (after setting up)
+git clone https://github.com/YOUR_USERNAME/zewedjobs-complete.git
+cd zewedjobs-complete
+
+# 2. Setup environment
+cp telegram-bot/.env.example telegram-bot/.env
+cp admin-panel/config/.env.example admin-panel/config/.env
+
+# Edit .env files with your values
+nano telegram-bot/.env
+nano admin-panel/config/.env
+
+# 3. Setup and run
+chmod +x RUN_ME_FIRST.sh
+./RUN_ME_FIRST.sh
+
+# 4. Make changes and push
+git add .
+git commit -m "Your changes"
+git push origin main
