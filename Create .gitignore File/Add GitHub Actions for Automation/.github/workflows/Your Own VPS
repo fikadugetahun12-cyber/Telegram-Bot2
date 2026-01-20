@@ -1,0 +1,9 @@
+# SSH into your server
+ssh user@your-server.com
+
+# Clone repository
+git clone https://github.com/YOUR_USERNAME/zewedjobs-complete.git
+
+# Run deployment script
+cd zewedjobs-complete
+bash scripts/deploy-vps.sh
