@@ -1,0 +1,8 @@
+# Get your server URL (after deployment)
+# Example: https://your-bot.railway.app
+
+# Set webhook (replace with your URL)
+curl "https://api.telegram.org/botYOUR_BOT_TOKEN/setWebhook?url=https://your-bot.railway.app/webhook"
+
+# Check webhook info
+curl "https://api.telegram.org/botYOUR_BOT_TOKEN/getWebhookInfo"
