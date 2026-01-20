@@ -1,0 +1,12 @@
+# Create feature branch
+git checkout -b feature/add-email-notifications
+
+# Make changes
+# Test locally
+
+# Commit changes
+git add .
+git commit -m "Add email notification system"
+
+# Push to GitHub
+git push origin feature/add-email-notifications
