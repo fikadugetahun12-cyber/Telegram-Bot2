@@ -1,0 +1,8 @@
+# Navigate to your project
+cd zewedjobs-complete
+
+# Initialize git repository
+git init
+
+# Check status
+git status
