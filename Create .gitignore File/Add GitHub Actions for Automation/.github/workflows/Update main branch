@@ -1,0 +1,11 @@
+# Switch to main
+git checkout main
+
+# Pull latest changes
+git pull origin main
+
+# Merge feature
+git merge feature/add-email-notifications
+
+# Push updates
+git push origin main
